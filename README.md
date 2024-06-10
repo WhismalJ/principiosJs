@@ -1,2 +1,2 @@
-# pricipiosJs
+# principiosJs
 curso de javasript
