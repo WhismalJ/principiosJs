@@ -182,7 +182,440 @@ ejemplo:
  var listaDeEstudiantes = [["nora", 66],  ["carlos", 45]];
  console.log(listaDeEstudiantes);
 
+ var listaDePrecios = [["Harina",  37, "Cod1"], ["Arroz", 48, "Cod7"], ["Salsa", 65, "Cod21"]];
+ console.log(listaDePrecios);
+
+/*acceder a los eleentos de un arreglo*/
+
+var miArreglo = [10, 20, 30];
+/*
+arreglo: [10, 20, 30]
+indices:   0   1   2
+
+los indices se empiezan a contar desde 0 cero
+*/
+
+console.log(miArreglo[0]);
+console.log(miArreglo[1]);
+console.log(miArreglo[2]);
+
+var suma = miArreglo[0] + miArreglo[1] + miArreglo[2];
+console.log(suma);
+
+/*
+modificar elementos del arreglo*/
+
+var miArreglo = [10, 20, 30];
+miArreglo[1] = [2,3,4];
+console.log(miArreglo);
+
+/*acceder arreglos anidados o multidimensionales*/
+
+var miArreglo = [[1,2,3], [4,5,6], [7,8,9]];
+
+/*
+Arreglo: [[1,2,3], [4,5,6], [7,8,9]]
+Indices:0  1  2 
+Indices  Internos:0 1 2   0 1 2  0 1 2   
+
+Nota: seria la forma ordenada de buscar los elementos */
+
+console.log(miArreglo[1][2]); //6
+
+/*  .push, añade elemento al final del arreglo*/
+
+//var estaciones = ["Invierno", "Otoño", "Primavera"];
+
+/*estaciones.push ("verano");
+console.log(estaciones);
+
+/* .pop sirve para remover ultimo elemento*/
+
+var estaciones;
+
+estaciones = ["invierno","otoño","primavera","verano"];
+estaciones.pop();
+console.log(estaciones);
+
+// en el metodo pop el parentesisi vacio es quien llama a la accion, para eliminar el ultimo elemento
+
+//metodo .shift para eliminar el prier eleento del arreglo anidado
+
+var cursos = ["primero","segundo","tercero","cuarto"];
+cursos.shift();
+console.log(cursos);
+
+// .unshift agrega el elemento al principio de los arreglos
+
+var estaciones =["invierno","otoño","primavera"];
+
+estaciones.unshift("aguaceros"); //agrega verano al principio del arreglo
+
+console.log(estaciones);
+
+var miListaDeCompras =[["cereal",3],["arroz",5],["cambur",4],["refresco",2]];
+
+//Cereal
+
+console.log("Voy a comprar" + miListaDeCompras[0][1] + " unidades de " + miListaDeCompras[0][0] + "." );
+
+// arroz
+console.log("Voy a comprar" + miListaDeCompras[1][1] + " unidades de " + miListaDeCompras[1][0] + "." );
+
+// cambur
+console.log("Voy a comprar" + miListaDeCompras[2][1] + " unidades de " + miListaDeCompras[2][0] + "." );
+
+// refresco
+
+console.log("Voy a comprar" + miListaDeCompras[3][1] + " unidades de " + miListaDeCompras[3][0] + "." );
+
+//FUNCIONES
+
+function mostrarMensaje() {
+    console.log("Buenos dias Gente");
+}
+
+    mostrarMensaje();mostrarMensaje();
+    mostrarMensaje();mostrarMensaje();
+
+    //argumentos: valores que se le dan a los parametros.  (pendiente con la indentacion, abajo de la funcion debe establecerse un espacio)
+
+    function sumar (a,b) {
+       var suma = a + b;
+       console.log("El resultado de "+ a +" + " + b + " es: " + suma);
+    }
+
+    sumar(7, 3);
+    sumar(4, 7);
+    sumar(85, 15);
+
+    // aca abajo esta otro modo de realizar la suma, on los mismos datos de arriba
+
+
+    var x = 6;
+    var y = 7;
+
+    sumar(x, y);
+
+    function concatenarTresCadenas(cadena1, cadena2, cadena3){
+        console.log(cadena1 + " " + cadena2 + " " + cadena3);
+    }
+
+    concatenarTresCadenas("whismal", "futuro", "programador");
+
+    /* ambito global: se puede usar en cualquier parte del programa principal. tambien dentro de una funcion.
+    
+    variable local: son variables dentro de una funcion que se pueden usar dento de esa funcion*/
+
+//global
+
+var miVariableGlobal = 5;
+
+console.log(miVariableGlobal);
+
+function miFuncion(){
+    console.log(miVariableGlobal);
+}
+
+miFuncion();
+
+console.log(miVariableGlobal);
+
+//local (no se puede usar fuera del par de llaves)
+
+function miFuncion(){
+    var miVariableLocal = 8;
+    console.log(miVariableLocal);
+}
+
+//las variables locales tiene prioridad en el codigo si tienen el mismo nombre
+
+//chequear consola, de donde sale el 5??
+
+//AMBITO GLOBAL Y AMBITO LOCAL
+
+var miNombre = "Nora";
+
+function mostrarMiNombre(){
+    var miNombre = "Gino";
+    console.log(miNombre);
+}
+
+mostrarMiNombre()
+
+console.log(miNombre);
+
+
+//RETORNAR UN VALOR
+
+function sumar(a,b){
+    return a + b;
+}
+
+console.log(sumar(58,32));
+
+//UNDEFINED 
+
+function sumar (a,b) {
+    console.log(a + b);
+}
+console.log(sumar(5,3));
+
+
+// ASIGNAR UN VALOR RETORNADO
+
+function sumar (a, b){
+
+return a + b;
+}
+var resultado = sumar(15, 35);
+//var resultado=50
+
+console.log(resultado);
+
+function crearCadenaConMeta(){
+    return "Mi meta es aprender " + lenguajeDeProgramacion;
+}
+
+var miMeta =  crearCadenaConMeta ("Javascript");
+
+console.log(miMeta);
+
+//PERMANECE EN FILA (PROIMO EN LA FILA). SERA OMO UN EJEMPLO PARA MODIFICAR ARREGLO. TAL COMO SE HACE EN LOS BANCOS CUANDO UN CLIENTE PASA EN SU TURNO
+
+function proximoEnLaFila(arreglo,elemento) {
+    arreglo.push(elemento);//agregar al final del arreglo
+    return arreglo.shift(); //remover el ultimo elemento
+}
+var miArreglo = [1, 2, 3, 4, 5]
+
+console.log("Antes: " + JSON.stringify(miArreglo));
+
+console.log(proximoEnLaFila(miArreglo, 6));
+
+console.log("Despues: "+ JSON.stringify(miArreglo));
+
+
+//VALORES BOOLEANOS  (TRUE) (FALSE)
+
+//OPERADOR DE IGUALDAD (==) (no compara arreglos)
+
+console.log(5 == 5);
+
+console.log(7 == 7);
+
+
+// operador de igualdad estricta (===)
+
+console.log(9 === 9);
+
+
+//como comparar valores
+
+var a;
+var b;
+
+a = 5;
+b = 5;
+
+console.log(a == b);
+console.log(a === b);
+
+b= 8;
+console.log( a == b);
+console.log(a === b);
+
+b = "5";
+
+console.log(a == b);
+console.log(a === b);
+
+
+// operador de desigualdad !=
+
+
+console.log(9 != 6);
+
+console.log(9 != 9);
+
+
+// operador de desigualdad estricta !==
+
+console.log(1 !== "1");
+
+
+//operador Mayor que (en el caso de letras, compara en orden alfabetico)
+
+console.log(6 > 5);
+console.log(3 > 10);
+
+console.log("b" > "a");
+
+var a = 15;
+
+var b = 7;
+
+console.log(a > b);
+console.log(b > a);
+
+//operador mayor o igual que  >=
+
+console.log(5 >= 5);
+
+//operado menor que <.  Con letras se guia por el orden alfabetico
+
+console.log(5 < 6);
+console.log(10 < 3);
+
+// menor o igual que <=
+
+console.log(5 <= 5);
+console.log(7 <= 3);
+
+// operadores logicon "and" = &&. combinan expresiones
+
+
+var a =8;
+
+console.log((a>5) && (a < 10));
+
+//operador logico "or" ||
+
+var a = 8;
+console.log((a < 5) || (a > 15));
+
+console.log((a < 18) || (a = 8));
+
+console.log((a < 10) || (a > 4));
+
+// operador logico "not"(!) para negar una expresion)
+
+var a = 8;
+console.log(!(a > 5));
+
+console.log(!(a < 5));
+
+//sentencias condicionales.(if).  Si la condicion es falsa no se ejecuta
+
+if (true) {
+    console.log("La condicion es verdadera");
+}
+
+var x = 5;
+if (x > 2) {
+    console.log("la condicion es vedad");
+
+    if ((x > 2) && (x < 10)) { console.log("La condicion es verdadera");}
+}
+
+var estacion= "Invierno";
+
+if (estacion == "Invierno"){
+    console.log("¡Si! Me gusta el invierno");
+
+}
+
+//clausula (else) nos permite ver que pasa si la condicion es falsa
+
+var x= 21
+
+if (x < 30){
+    console.log("La condicion es verdadera");
+} else {
+    console.log("La condicion es falsa.");
+}
+
+//en este ejemplo la condicion la describe el elemento luego de else
+
+var estacion = "Invierno";
+
+if (estacion == "Verano"){
+    console.log("Comenzo el verano. Ya podemos ir a la playa");
+}else{
+    console.log("Ya quiero que llegue el verano para ir a la playa");
+}
+
+//CLAUSULA " ELSE IF" se ejecutara solo la primera que sea verdadera
+
+function clasificarValor(valor){
+if (valor % 2 == 0) {
+    console.log("Divisible entre 2");
+} else if (valor % 3 == 0) {
+    console.log("Divisible entre 3");
+}  else { 
+    console.log("No es divisible entre las opciones");
+}
+}
+
+//ejemplo 1
+clasificarValor(2);
+
+//ejemplo 2
+
+clasificarValor(15);
+
+//ejemplo 3
+
+clasificarValor(7);
+
+// CONDICIONALES ORDEN LOGICO
+
+
+function clasificarValorMayorMenor(valor) {
+    if (valor < 5) {
+        console.log(" Menor que 5.");
+    } else if (valor < 10) {
+        console.log("Menor que 10.");
+    } else {
+        console.log("Mayor o igual a 10.");
+    }
+    }
+// ejemplo 1
+    clasificarValorMayorMenor(2);
+
+
+    //ejemplo 2
+
+    clasificarValorMayorMenor(7);
+
+    //ejemplo 3
+
+    clasificarValorMayorMenor(17);
+
+    // el orden de la clauslas es: if >  else if > else.  siempre deben tener ese orden. Y se ejecutara la primera condicion que sea verdadera
+
+
+    //ENCADENAR SENTENCIAS  "IF ...ELSE" ACA SE PUEDEN USAR DOS VECES ELSE IF
+
+    
+    function interpretarIMC(indiceDeMasaCorporal)
+
+    if (indiceDeMasaCorporal < 18.5) {
+        console.log("bajo Peso");
+    } else if (indiceDeMasaCorporal <= 24.9) {
+        console.log("Normal");
+    } else if (indiceDeMasaCorporal <= 29.9) {
+        console.log("Sobrepeso");
+    } else {
+        console.log("Obeso");
+    }
+    //ejemplo 1
+
+    interpretarIMC(22.2);
+
+
+
+// 4:02 minutos
+
+
+
+
+
+
+
+
 
 
 
 </script>
+
