@@ -588,8 +588,7 @@ function clasificarValorMayorMenor(valor) {
     //ENCADENAR SENTENCIAS  "IF ...ELSE" ACA SE PUEDEN USAR DOS VECES ELSE IF
 
     
-  /*  function interpretarIMC(indiceDeMasaCorporal)
-
+   function interpretarIMC(indiceDeMasaCorporal){
     if(indiceDeMasaCorporal < 18.5) {
         console.log("bajo Peso");
     } else if (indiceDeMasaCorporal <= 24.9) {
@@ -599,9 +598,13 @@ function clasificarValorMayorMenor(valor) {
     } else {
         console.log("Obeso");
     }
+}
+
     //ejemplo 1
 
-    interpretarIMC(22.2);*/
+    interpretarIMC(22.2);
+
+    interpretarIMC(18)
 
     //MINI PROYECTO JUEGO DE GOLF
 
@@ -865,12 +868,99 @@ console.log(curso.idioma);
 
 /*ELIMINAR PROPIEDADES: SE USA DELETE, EN ESTE CASO DE ARRIBA SERIA DELETE CURSO.IDIOMA;  */
 
+console.log(curso.duracion);  //30 dias
+
+delete curso.duracion;
+
+console.log(curso.duracion);  //undefinided
+
 //OBETOS PARA BUSQUEDA
 
+function buscarElementoQuimico (simbolo){
+    var simbolosQuimicos = {
+        "Al": "Aluminio",
+        "S": "Azufre",
+        "Cl": "Cloro",
+        "He": "Helio",
+        "B": "Boro",
+        "Li": "Litio"
+};
+return simbolosQuimicos[simbolo];
+}
+
+console.log(buscarElementoQuimico("Al"));
+console.log(buscarElementoQuimico("S"));
+console.log(buscarElementoQuimico("Cl"));
+console.log(buscarElementoQuimico("He"));
+console.log(buscarElementoQuimico("B"));
+console.log(buscarElementoQuimico("Li"));
+
+
+//VERIFICAR PROPIEDADES
+
+var miCuaderno = {
+    "color": "verde",
+    "categoria": 3,
+    "precio": 4.56
+};
+
+console.log(miCuaderno.hasOwnProperty("color")); //true
+
+// se va  varificar si un objeto tine una propiedad o no
+
+function verificarPropiedad(obj, propiedad){
+  if (obj.hasOwnProperty(propiedad)) {
+    return "propiedad:" + obj [propiedad];
+  }  else {
+    return "El objeto no tiene esta propiedad";
+  }
+} 
+var miCuaderno = {
+    "color": "verde",
+    "categoria": 3,
+    "precio": 4.56
+};
+
+console.log(verificarPropiedad(miCuaderno, "color"));
+console.log(verificarPropiedad(miCuaderno, "tamaño"));
+
+
+// OBJETOS COMPLEJOS
+
+var ordenesDePizzas = [
+    {
+        "tipo": "margarita",
+        "tamaño": "individual",
+        "precio": 5.67,
+        "toppings": [
+            "extra queso",
+            "champiñones",
+            "piña"
+        ],
+        "para llevar": true
+    },
+    {
+        "tipo": "cuatro quesos",
+        "tamaño": "familiar",
+        "precio": 18.34,
+        "toppings": [
+            "extraqueso",
+            "pimenton"
+        ],
+        "para llevar": false
+    },
+];
+
+console.log(ordenesDePizzas[0]);
+console.log(ordenesDePizzas[1]);
+
+console.log(ordenesDePizzas[0]["tipo"]);
+console.log(ordenesDePizzas[1]["tipo"]);
 
 
 
-// 5:19 MINUTOS
+
+// 5:34 MINUTOS
 
 
 
