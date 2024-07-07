@@ -588,9 +588,9 @@ function clasificarValorMayorMenor(valor) {
     //ENCADENAR SENTENCIAS  "IF ...ELSE" ACA SE PUEDEN USAR DOS VECES ELSE IF
 
     
-    function interpretarIMC(indiceDeMasaCorporal)
+  /*  function interpretarIMC(indiceDeMasaCorporal)
 
-    if (indiceDeMasaCorporal < 18.5) {
+    if(indiceDeMasaCorporal < 18.5) {
         console.log("bajo Peso");
     } else if (indiceDeMasaCorporal <= 24.9) {
         console.log("Normal");
@@ -601,19 +601,276 @@ function clasificarValorMayorMenor(valor) {
     }
     //ejemplo 1
 
-    interpretarIMC(22.2);
+    interpretarIMC(22.2);*/
+
+    //MINI PROYECTO JUEGO DE GOLF
+
+    function puntajeDeGolf(par,golpes){
+        if (golpes == 1) {
+            return "Hole in one!";
+        } else if (golpes <= par - 2) {
+            return "Eagle";
+        } else if (golpes == par - 1) {
+            return "Birdie";
+        } else if (golpes == par) {
+            return "Par";
+        } else if(golpes == par + 1){
+            return "Bogey";
+        } else if (golpes == par +2){
+            return "Double Bogey";
+        } else if (golpes >= par + 3){
+            return "Go Home";
+        }
+    }
+    console.log(puntajeDeGolf(4,2));
+    
+    console.log(puntajeDeGolf(4,4));
+
+    console.log(puntajeDeGolf(4,6));
+
+    console.log(puntajeDeGolf(4,15));
 
 
 
-// 4:02 minutos
+
+//SENTENCIAS SWITCH
+
+function clasificarValor(valor) {
+    var respuesta;
+    switch (valor) {
+        case 1: respuesta = "alpha";
+        break;
+        case 2:
+        respuesta = "beta";
+        break;
+        case 3: 
+        respuesta = "gamma";
+        break;
+        case 4: respuesta = "delta";
+        break;
+    }
+    return respuesta;
+}
+console.log(clasificarValor(1));
+
+console.log(clasificarValor(2));
+
+console.log(clasificarValor(3));
+
+console.log(clasificarValor(4));
+
+// EJEMPLO 2
+
+var producto = "hamburguesa";
+
+switch (producto) {
+    case "pizza": 
+    console.log("la pizza basica cuesta $5");
+    break;
+    case "hamburguesa":
+        console.log("las hamburguesas cuestan $3");
+        break;
+        case "helado":console.log("el helado cuesta $2");
+        break;
+}
+
+
+
+var producto = "helado";
+
+switch (producto) {
+    case "pizza": 
+    console.log("la pizza basica cuesta $5");
+    break;
+    case "hamburguesa":
+        console.log("las hamburguesas cuestan $3");
+        break;
+        case "helado":console.log("el helado cuesta $2");
+        break;
+}
+
+
+// SENTENCIAS SWITCH  
+// OPCION PREDETERMINADA
+
+
+function seleccionarIdioma(valor){
+var idioma;
+switch (valor) {
+    case 1:
+    idioma = "Español";
+    break;
+    case 2:
+    idioma = "Frances";
+    break;
+    case 3: idioma = "Italiano";
+    break;
+    default: idioma = "Ingles"
+    break;   
+}
+return idioma;
+}
+
+console.log(seleccionarIdioma(1));
+console.log(seleccionarIdioma(2));
+console.log(seleccionarIdioma(3));
+console.log(seleccionarIdioma(5));
+
+// SENTENCIA SWITCH / MULTIPLES CASOS
+
+
+function clasificarVolumen(valor) {
+    var volumen;
+    switch (valor) {
+        case 1: 
+            volumen ="bajo";
+        break;
+        case 2:
+        case 3:
+            volumen = "intermedio";
+                break;
+        case 4:
+        case 5:
+        case 6:
+             volumen = "alto";
+                    break;
+    }
+    return volumen;
+}
+console.log(clasificarVolumen(1));
+console.log(clasificarVolumen(3));
+console.log(clasificarVolumen(6));
+
+
+
+//retornar valores booleanos
+
+function esMenorQue(a,b) {
+    return a < b;
+}
+console.log(esMenorQue(3,6));
+
+//PATRON DE RETORNO ANTICIPADO
+
+function miFuncion() {
+    console.log("Hola");
+    return "Mundo";
+}
+    console.log(miFuncion());
+
+    function calcularRaizCuadrada(num) {
+    if (num < 0) {
+        return undefined;
+    }
+    return Math.sqrt(num);
+}
+
+console.log(calcularRaizCuadrada(-2));
+
+console.log(calcularRaizCuadrada(25));
+
+/*copiar el miniproyecto de blackjack de el minuto 4:55*/
+
+
+//CREAR OBJETOS 
+
+var miPerro = {
+    "nombre":"Gino",
+    "edad": 5,
+    "peso": 6,
+    "raza": "Beagle"
+};
+
+
+var miObjeto = {
+    5:
+"cinco"
+};
+
+
+//ACCEDER A PROPIEDADES: NOTACION DE PUNTO
+
+var miPerro = {
+    "nombre":"Gino",
+    "edad": 5,
+    "peso": 6,
+    "raza": "Beagle"
+};
+
+console.log(miPerro.nombre);
+console.log(miPerro.edad);
+console.log(miPerro.peso);
+console.log(miPerro.raza);
+
+
+//ACCEDER A PROPIEDADES: NOTACION DE CORCHETE [""]
+
+
+var miCuaderno = {
+    "color": "verde",
+    "categoria": 3,
+    "numero de paginas": 200,
+    "numero de hojas": 100
+};
+
+console.log(miCuaderno.color);
+
+console.log(miCuaderno["color"]);
+
+//ACCEDER A PROPIEDADES: VARIABLES
+
+
+var resultados = {
+    1: "whismal",
+    2: "hector",
+    3: "sofi",
+    4: "yazmelis",
+};
+
+var posicion = 4;
+
+console.log(resultados[posicion]);
+
+//ACTUALIZAR PROPIEDADES PERMITE QUE EL OBJETO CAMBIE DURANTE LA EJECUCION DEL PROGRAMA
+
+var mochila = {
+    "color": "azul",
+    "tamaño": "mediano",
+    "contenido": ["botella de agua", "cuaderno"]
+};
+
+console.log(mochila.color); //azul
+
+mochila.color = "verde";
+
+console.log(mochila.color); //verde
+
+console.log(mochila.contenido);
+
+mochila.contenido.push("lapicero");
+console.log(mochila.contenido);
+
+var curso = {
+    "titulo": "Aprende Java desde cero",
+    "idioma": "español",
+    "duracion": "30 dias"
+};
+
+curso.vistas = 4500; /*se puede usar curso[vistas] */
+
+
+console.log(curso.vistas);
+
+console.log(curso.idioma);
+
+/*ELIMINAR PROPIEDADES: SE USA DELETE, EN ESTE CASO DE ARRIBA SERIA DELETE CURSO.IDIOMA;  */
+
+//OBETOS PARA BUSQUEDA
 
 
 
 
-
-
-
-
+// 5:19 MINUTOS
 
 
 
