@@ -949,6 +949,16 @@ var ordenesDePizzas = [
         ],
         "para llevar": false
     },
+
+    //aca abajo se esta incluyendo otro tipo de pizza, automaticamente sera llamado por el [2] en console.log
+
+    {
+        "tipo": "napolitana",
+        "tamaño": "individual",
+        "precio": 6.78,
+        "toppings": [],
+        "para llevar": true
+    }
 ];
 
 console.log(ordenesDePizzas[0]);
@@ -959,8 +969,72 @@ console.log(ordenesDePizzas[1]["tipo"]);
 
 
 
+console.log(ordenesDePizzas[2]);
 
-// 5:34 MINUTOS
+
+//OBJETOS ANIDADOS: ACA SERAN OBJETOS DENTRO DE OBJETOS
+
+var miReceta = {
+    "descripcion": "mi postre favorito",
+    "costo": 15.6,
+    "ingredientes":{
+        "masa": {
+            "harina": "100gr",
+            "sal": "1 cucharadita",
+            "agua": "1 taza"
+        },
+        "cobertura": {
+            "azucar": "120gr",
+            "chocolate": "4 cucharadas",
+            "mantequilla": "200gr"
+        }
+    }
+};
+
+console.log(miReceta.descripcion);
+console.log(miReceta.costo);
+console.log(miReceta.ingredientes);
+
+//anidamos, se puede usar corchetes con comillas tambien, que a su vez es recomendable si el usuario esta interactuando
+
+console.log(miReceta.ingredientes.masa);
+
+console.log(miReceta.ingredientes.cobertura);
+
+console.log(miReceta.ingredientes.cobertura.mantequilla);
+
+// ARREGLOS ANIDADOS
+
+var misPlantas = [
+    {
+        tipo
+: "flores",
+lista: [
+    "rosas",
+    "tulipanes",
+    "dientes de leon"
+]    
+},
+{
+    tipo: "arboless",
+    lista: [
+        "abeto",
+        "pino",
+        "abedul"
+    ]
+}
+];
+
+var primeraFlor = misPlantas [0].lista[0];
+console.log(primeraFlor);
+
+var segundoArbol = misPlantas[1].lista[2];
+console.log(segundoArbol);
+
+
+
+
+// 5:51 MINUTOS
 
 
 
