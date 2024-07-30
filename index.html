@@ -1032,9 +1032,130 @@ var segundoArbol = misPlantas[1].lista[2];
 console.log(segundoArbol);
 
 
+/* Tenemos un objeto que representa parte asociado a otras propiedades.
+
+Cada album tiene un numero de identificacion unico (id) asociado a otras propiedades.
+No todos los albumes tienen la informacion completa. */a
+
+var coleccionDeDiscos = {
+    7853: {
+        tituloDeAlbum: "Bee Gees Greattest",
+        artista: "Bee Gees",
+        canciones: ["Stayin, Alive"]
+    },
+    5439: { 
+        tituloDeAlbum: "ABBA GOLD"
+    }
+};
+
+    /* Define una funcion actualizarDiscos que tome los siguientes parametros:
+
+    - discos (el objeto que representa la coleccion de discos).
+    - id.
+    -propiedad ("artista" o "canciones").
+    -valor.
+
+    Tu meta es completar la funcion implementando las siguientes reglas para modificar el objeto pasado a la funcion:
+
+    -Si "valor" es una cadena vacia, elimina la propiedad del album correspondiente.
+
+    -Si propiedad es igual a la cadena de caracteres "canciones" pero el albun no tiene una propiedad llamada canciones, crea un arreglo vacio y agrega "valor" a ese arreglo.
+
+    -Si " propiedad" es igual a la cadena de caracteres "cancion"  y "valor" no es una cadena vacia, agrega "valor" al final del arreglo de anciones del album correspondiente.
+
+    - Si "valor" no es una cadena vacia y "propiedad" no es igual a "canciones" , asigna el valor del parametro "valor" a la propiedad.
+    
+    Si la propiedad no existe, debes crearla y asignar este valor.*/
+
+    function actualizarDiscos (discos, id, propiedad, valor) {
+       if (valor === "") {
+           delete discos[id][propiedad];
+       } else if (propiedad === "canciones"){
+           discos[id][propiedad] = discos[id][propiedad] || [];
+           discos[id][propiedad].push(valor);
+       }else {
+           discos[id][propiedad] = valor;
+       }
+    }
+    console.log(coleccionDeDiscos[7853].tituloDeAlbum);
+
+    actualizarDiscos(coleccionDeDiscos, 7853, "tituloDeAlbum", "");
+    console.log(coleccionDeDiscos[7853].tituloDeAlbum);
 
 
-// 5:51 MINUTOS
+    /*CICLO WHILE (MIENTRAS) O FOR
+
+    SE USA CUANDO NO SE SABE LA CANTIDAD DE ITERACIONES PERO SI LO QUE QUEREMOS MOSTRAS EN EL MENSAJE. CON UNA ESTRUCTURA ESPECIFICA*/
+
+    var i = 2;
+
+    while (i <= 3) {
+        console.log("HOLA WHISMAL");
+        i++;
+    }
+
+
+    //aca abajo los arreglos seran vacios porque la variable no tiene un valor.
+
+
+    var miArreglo = [];
+    var w;
+
+    console.log(miArreglo);
+
+    while (w < 10){
+        miArreglo.push(i);
+        w++;
+    }
+
+    console.log(miArreglo);
+
+
+//repetimos el ejercicio y le damos valor a la variable 
+
+var miArreglo = [];
+    var w = 0;
+
+    console.log(miArreglo);
+
+    while (w < 10) {
+        miArreglo.push(w);
+        w++;
+    }
+
+    console.log(miArreglo);
+
+    //CICLO FOR ES LO CONTRARIO DEL CICLO WHILE **NO SE ENTENDIO MUCHO**
+
+    var miAreglo = [];
+
+    for (var z = 0; z < 10; z + 2 ) {
+    miArreglo.push(z);
+    }
+
+    console.log(miArreglo);
+
+
+// CICLO FOR PARA NUMEROS IMPARES
+
+var miArreglo
+for ( var x = 1; x < 20; x += 2){
+    miArreglo.push(x);
+}
+
+console.log(miArreglo);
+
+
+//CICLO FOR PARA CONTAR HACIA ATRAS
+
+for  (var y = 15; y >= 10; y--){
+    console.log(y);
+}
+
+
+
+
+// 6:17 MINUTOS
 
 
 
