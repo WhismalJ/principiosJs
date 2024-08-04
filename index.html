@@ -1127,9 +1127,9 @@ var miArreglo = [];
 
     //CICLO FOR ES LO CONTRARIO DEL CICLO WHILE **NO SE ENTENDIO MUCHO**
 
-    var miAreglo = [];
+    var miArreglo = [];
 
-    for (var z = 0; z < 10; z + 2 ) {
+    for (var z = 0; z < 10; z += 2 ) {
     miArreglo.push(z);
     }
 
@@ -1152,10 +1152,395 @@ for  (var y = 15; y >= 10; y--){
     console.log(y);
 }
 
+// PARA EL MISMO CCLO PERO DE 2 EN 2 N RETRO HACEMOS ASI
+
+for  (var f = 15; f >= 10; f-= 2){
+    console.log(f);
+}
+
+var miArreglo = [];
+
+for (var w = 10; w >= 0; w -= 2) {
+    miArreglo.push(w);
+}
+
+
+// ITERAR SOBRE UN ARREGLO CON UN CICO FOR
+
+var miArreglo = [4, 6, 8, 2,];
+var total = 0;
+
+for (var m = 0; m < miArreglo.length; m++ ) {
+console.log("iteracion" + m);
+console.log(miArreglo[m]);
+total += miArreglo[m];
+}
+
+console.log(total);
+
+
+var lenguajes = ["javascript", " python", "java", "c++"];
+
+for (var i = 0; i < lenguajes.length; i++) {
+    console.log(lenguajes[i].toUpperCase());
+}
+
+
+// ciclo for dentro de una funcion. al final en la consola nos dice la cantidad de numeros pares que hay
+
+function contarNumerosPares(arreglo){
+var total = 0;
+
+for (var i = 0; i < arreglo.length; i++){
+    if (arreglo[i] % 2 == 0) {
+        total++;
+        }
+}
+return total;
+}
+console.log(contarNumerosPares([5, 3, 1, 6, 8]));
+
+
+// CICLOS FOR ANIDADOS O CICLOS DENTRO DE OTROS CICLOS FOR (TAMBIEN SE PUEDE VER EN LA PARTE DE ARREGLOS ANIDADOS)
+
+
+var miArreglo = [[1, 2, 3,],[4, 5, 6,],[7, 8, 9,]];
+
+for (var i = 0; i < miArreglo.length; i++){
+    console.log("> Nueva iteracion");
+    var arregloAnidado = miArreglo[i]; //arreglo
+    console.log("Arreglo: " + arregloAnidado);
+
+    for (var j = 0; j < arregloAnidado.length; j++){
+        console.log(">>>Ciclo anidado")
+        console.log("Elemento:")
+        console.log(arregloAnidado[j]);
+    }
+}
+
+console.log ("ciclo do while");
+//CiCLOS DO ... WHILE (HACER TAL COSA MIENTRAS UNA CONDICION ES VERDADERA)
+
+var x;
+
+x = 5;
+
+do{
+    console.log(x);
+    x++;
+}while (x < 10) 
+
+
+var contactos = [
+    {
+        "nombre": "Nora",
+        "apellido": "Perez",
+        "edad": "50",
+        "gusto": ["pizza", "futbol"]
+    },
+    {
+        "nombre": "whismal",
+        "apellido": "Hernandez",
+        "edad": "41",
+        "gusto": ["arepa", "boxeo"]   
+    },
+    {
+        "nombre": "Sofi",
+        "apellido": "Hernandez",
+        "edad": "6",
+        "gusto": ["Helado", "natacion"]
+    },
+];
+
+function buscarPerfil(nombre,propiedad){
+    for (var i = 0; i < contactos.length; i++) {
+    if (contactos[i].nombre === nombre){
+        return contactos[i][propiedad] || "la propiedad no existe";
+    }
+}
+return "el contacto no esta en la lista";
+}
+
+console.log(buscarPerfil("Sofi", "gusto"));
+
+console.log(buscarPerfil("whismal", "apellido"));
+
+
+// NUMEROS  decimales ALEATORIOS
+
+
+function generarFraccionAleatoria() {
+    return Math.random();
+}
+console.log(generarFraccionAleatoria());
+console.log(generarFraccionAleatoria());
+console.log(generarFraccionAleatoria());
+console.log(generarFraccionAleatoria());
+
+// numeros enteros aleatorios
+
+var numeroAleatorioEntre0y19 = Math.floor(Math.random() *20);
+
+console.log(numeroAleatorioEntre0y19);
+
+
+function generarEnteroAleatorio(limiteSuperior)
+{
+    //genera un entero aleatorio entre el 0 y el limite superior sin incuirlo
+
+    return Math.floor(Math.random() * limiteSuperior);
+}
+console.log(generarEnteroAleatorio(5));
+console.log(generarEnteroAleatorio(5));
+console.log(generarEnteroAleatorio(5));
+console.log(generarEnteroAleatorio(5));
+
+// aca abajo lo haremos en un ciclo
+
+function generarEnteroAleatorio(limiteSuperior)
+{
+
+return Math.floor(Math.random() * limiteSuperior);
+}
+for (var i = 0; i < 15; i++) {
+    console.log(generarEnteroAleatorio(5));
+}
+
+console.log("aleatorio");
+//NUMEROS ENTEROS ALEATORIOS EN UN RANGO
+
+
+function rangoAleatorio(limiteInferior, limiteSuperior) {
+    return Math.floor(Math.random() * (limiteSuperior - limiteInferior + 1)) + limiteInferior;
+}
+
+for (var i = 0; i < 12; i++){
+console.log(rangoAleatorio(3, 8));
+}
 
 
 
-// 6:17 MINUTOS
+// funcion parseInt (procesar un entero)
+
+console.log(parseInt("58"));
+
+
+var a = parseInt ("5");
+var b = parseInt("6");
+
+console.log(a+b);
+
+console.log("parseInt con una base");
+
+
+//funcion parseint con una base
+
+
+console.log(parseInt("110111", 2));
+
+console.log("exadecimal a decimal");
+
+console.log(parseInt("3E0A", 16));
+
+
+
+
+//OPERADOR CONDICIONAL TERNARIO
+
+function retornarMinimo(x, y) {
+    console.log(x < y ? x : y);
+}
+
+retornarMinimo(4, 7);
+retornarMinimo(8, 2);
+retornarMinimo(6, 6);
+
+/* se puede hacer del siguiente modo tambien:
+
+function retornarMinimo(x, y) {
+    return x < y ? x : y;
+}
+
+console.log(retornarMinimo(4, 7));
+console.log(retornarMinimo(8, 2));
+console.log(retornarMinimo(6, 6));*/
+
+
+
+var a = 5;
+
+var b = 9;
+
+console.log(a > b ? a + 2 : b * 3);
+//se lee: si a es mayor que b ? (retornas a + 2 (:) sino b *3)
+
+
+// MULTIPLES OPERADORES CONDICIONALES O TERNARIOS
+
+function compararNumeros(a, b){
+    return a == b ? "a y b son iguales"
+            : a > b ? "a es mayor que b"
+            : "b es mayor que a"
+}
+console.log(compararNumeros(8, 15));
+console.log(compararNumeros(18, 5));
+console.log(compararNumeros(8, 8));
+
+//VAR VS LET (CON LET NO PODEMOS DECLARAR )
+
+var campista = "James";
+var campista = "David"
+
+console.log(campista);  //si usamos let solo podemos declarar 1 vez
+
+let beisbolista = "Hector";
+beisbolista = "Sofi";
+
+console.log(beisbolista);
+
+//AMBITO DE VAR VS LET (7:41) * no entendi*
+
+
+// CONST (TERCERA OPCION PARA DECLARAR UNA VARIABLE)
+
+const miConstante = 35;
+console.log(miConstante);
+
+//miConstante = 15; //marca error porque no se puede repetir.
+
+// (**) con doble asterisco elevamos al cuadrado
+
+function calcularAreaCirculo(radio){
+    const PI = 3.14;
+
+    if (radio < 0){
+        return undefined;
+    }
+    return PI * (radio ** 2);
+}
+
+console.log(calcularAreaCirculo(10));
+
+
+
+// MUTAR ARREGLO DECLARADO EN CONST
+
+
+const MI_ARREGLO = [1, 2, 3, 4];
+
+//ACA ABAJO ES LA FORMA DE MUTARLO, UNO A UNO
+
+
+MI_ARREGLO[0] = 5;
+MI_ARREGLO[1] = 6;
+MI_ARREGLO[2] = 7;
+MI_ARREGLO[3] = 8;
+
+console.log(MI_ARREGLO);
+
+
+//CREAR UN OBJETO INMUTABLE
+
+let colores = {
+    "verde": "#10e04b",
+    "azul": "1b50e0",
+    "negro": "#000000",
+    "blanco": "#ffffff", 
+};
+
+Object.freeze(colores);
+
+
+//FUNCIONES FLECHA
+
+/*esta seria la formulacion:
+const fecha = function() {
+    return new date();
+}; se tranforma esta funcion anonima asi....*/
+
+
+const fecha = () => new Date ();
+
+
+//FUNCIONES FLECHA CON PARAMETROS
+
+/* aca abajo la funcion original
+
+const sumarTres = function(x){
+    return x + 3;
+};
+*/
+
+const sumarTres = (x) => x + 3;
+
+console.log(sumarTres(4));
+
+//definamos una funcion anonima
+
+const concatenarArreglos = function(arreglo1, arreglo2) {
+    return arreglo1.concat(arreglo2);
+};
+
+console.log(concatenarArreglos([1, 2], [3, 4, 5]));
+
+
+//AHORA LA TRANSFORMAMOS A FLECHA (ojo: se le quito la (s) al final de arreglos porque ya fue declarada arriba, pero la funcion flecha quedaria aca abajo)
+
+
+const concatenarArreglo = (arreglo1, arreglo2) => arreglo1.concat(arreglo2);
+
+console.log(concatenarArreglo([1, 2], [3, 4, 5]));
+
+// otro ejemplo seria:
+
+const sumarNumeros = function(a, b) {
+    let num = 6;
+    return a + b + num;
+};
+
+console.log(sumarNumeros(1, 1));
+
+//llevandola a flecha quedaria asi....
+
+
+const sumarNumero = (a, b) => {
+    let num = 6;
+    return a + b + num;
+};
+
+console.log(sumarNumero(1, 1));
+
+//VALORES POR DEFECTO PARA PARAMETROS: queremos permitir que el usuario omita algun argumento para usar el valor por defecto
+
+const incrementar = (num, valor = 7) => num + valor;
+
+console.log(incrementar(5));
+
+//OPERADOR REST: (...nombre de variable) PERMITE PASAR CUALQUIER NUNERO DE ARGUMENTOS A UNA FUNCION Y QUE SE AGRUPEN COMO UN ARREGLO
+
+function miFuncion(...args){
+    console.log(args);
+}
+
+miFuncion(1);
+miFuncion(2, 3, 4);
+miFuncion([2, 3, 4, 5],[6, 7, 8, 9])
+
+//OPERADOR SPREAD: HACE LO CONTRARIO DE REST. DESCOMPONE ARREGLOS EN ELEMENTOS INDIVIDUALES. SE USA EL MISMO SIMBOLO (...) PERO ABAJO EN EL LLAMADO
+
+const numeros = [6, 8, 7];
+
+function sumar(x, y, z){
+return x + y + z;
+}
+console.log(sumar(...numeros));
+
+//sintaxis de desestructuracion (NO ENTENDI)
+
+
+
+
+// 8:14 MINUTOS
 
 
 
